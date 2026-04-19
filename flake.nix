@@ -13,12 +13,13 @@
   outputs = { self, nixpkgs, ... }@inputs:
     let
       lib = nixpkgs.lib;
+      vars = import ./config.nix;
     in {
     nixosConfigurations = {
-      nixosbtw = lib.nixosSystem {
-        system = "x86_64-linux";
+      ${vars.hostname} = lib.nixosSystem {
+        inherit (vars) system;
         # Pass inputs and self to all modules
-        specialArgs = { inherit self inputs; };
+        specialArgs = { inherit self inputs vars; };
         modules = [
           ./system
           inputs.home-manager.nixosModules.home-manager

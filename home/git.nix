@@ -1,9 +1,10 @@
+{ vars, ... }:
 {
   programs.git = {
     enable = true;
     settings = {
-      user.name = "beholder";
-      user.email = "kurganskiyvladislav@gmail.com";
+      user.name = vars.username;
+      user.email = vars.email;
       init.defaultBranch = "master";
       core.editor = "nvim";
     };

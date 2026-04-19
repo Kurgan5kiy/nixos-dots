@@ -1,21 +1,7 @@
-{ inputs, config, ... }:
-let
-  user = "beholder";
-in
+{ vars, ... }:
 {
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
-    users.${user} = {
-      imports = [ ../home ];
-      home.stateVersion = config.system.stateVersion;
-    };
-  };
-
-  users.users.${user} = {
+  users.users.${vars.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
-
 }
