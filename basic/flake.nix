@@ -4,6 +4,10 @@
   # Inputs that flake accepts and uses
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -16,7 +20,8 @@
         # Pass inputs and self to all modules
         specialArgs = { inherit self inputs; };
         modules = [
-          ./configuration.nix
+          ./system
+          inputs.home-manager.nixosModules.home-manager
         ];
       };
     };

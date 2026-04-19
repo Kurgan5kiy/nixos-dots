@@ -1,0 +1,14 @@
+{
+  programs = {
+    fish.enable = true;
+    niri.enable = true;
+    firefox.enable = true;
+    dconf = {
+      enable = true;
+      profiles.user.databases = [{
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      }];
+    };
+  };
+
+}

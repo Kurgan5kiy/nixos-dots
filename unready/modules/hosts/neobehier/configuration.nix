@@ -40,6 +40,7 @@
 
     environment.sessionVariables = {
       JLIBVA_DRIVER_NAME = "iHD";
+      EDITOR="nvim";
     };
 
     time.timeZone = "Europe/Warsaw";
