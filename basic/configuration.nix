@@ -2,11 +2,7 @@
 
   flake.nixosModules.neobehier = { config, lib, pkgs, ... }: {
     imports =
-      [
-        self.nixosModules.nixosHardware
-        self.nixosModules.niri
-        self.nixosModules.noctalia
-      ];
+      [ ./hardware.nix ];
 
     nixpkgs.config.allowUnfree = true;
     boot.loader = {
