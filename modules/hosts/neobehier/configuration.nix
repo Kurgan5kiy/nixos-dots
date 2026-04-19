@@ -47,10 +47,14 @@
 
     users.users.beholder = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "libvirtd" ];
     };
 
+    # Virtualization setup
+    virtualisation.libvirtd.enable = true;
+
     programs = {
+      virt-manager.enable = true;
       firefox.enable = true;
       dconf = {
         enable = true;
