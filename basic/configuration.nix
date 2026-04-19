@@ -1,10 +1,9 @@
-{ self, inputs, ...}: {
-
-  flake.nixosModules.neobehier = { config, lib, pkgs, ... }: {
-    imports =
-      [ ./hardware.nix ];
+{ self, inputs, pkgs, ...}: {
+    imports = [ ./hardware.nix ];
 
     nixpkgs.config.allowUnfree = true;
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     boot.loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -21,8 +20,6 @@
       proxy.noProxy = "127.0.0.1,localhost,internal.domain";
     };
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
     hardware = {
       bluetooth.enable = true;
       # Ensure graphics and Intel drivers are enabled
@@ -34,24 +31,18 @@
       };
     };
 
-    environment.sessionVariables = {
-      JLIBVA_DRIVER_NAME = "iHD";
-    };
 
     time.timeZone = "Europe/Warsaw";
     time.hardwareClockInLocalTime = true;
 
     users.users.beholder = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "libvirtd" ];
+      extraGroups = [ "wheel" ];
     };
-
-    # Virtualization setup
-    virtualisation.libvirtd.enable = true;
 
     programs = {
       fish.enable = true;
-      virt-manager.enable = true;
+      niri.enable = true;
       firefox.enable = true;
       dconf = {
         enable = true;
@@ -59,7 +50,6 @@
           settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
         }];
       };
-      
       git = {
         enable = true;
         config = {
@@ -96,25 +86,22 @@
         gh
         curl
         kitty
-        # fuzzel
         alacritty
         brightnessctl
         pavucontrol
         bluetui
         zed-editor
-        # wireguard-tools
         nautilus
         sushi
         wl-clipboard
       ];
+
       sessionVariables = {
         LIBVA_DRIVER_NAME = "iHD";
         GTK_THEME = "Adwaita:dark";
+        EDITOR = "nvim";
       };
     };
 
-  system.stateVersion = "25.11";
-
-  };
-
+    system.stateVersion = "25.11";
 }
