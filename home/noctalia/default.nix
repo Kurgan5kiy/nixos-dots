@@ -21,8 +21,9 @@ let
   ];
 in
 {
-  home.packages = extraPackages;
-
+  home = {
+    packages = extraPackages;
+  };
   # Writable Symlink to Repo for Noctalia-shell
   xdg.configFile."noctalia".source =
     config.lib.file.mkOutOfStoreSymlink "/home/${vars.username}/nixos-dots/home/noctalia/confs";

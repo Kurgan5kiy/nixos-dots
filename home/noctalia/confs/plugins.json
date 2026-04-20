@@ -8,28 +8,16 @@
     ],
     "states": {
         "custom-commands": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+            "enabled": true
         },
         "ip-monitor": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+            "enabled": true
         },
         "network-manager-vpn": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "noctalia-calculator": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+            "enabled": true
         },
         "screen-toolkit": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "wallcards": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+            "enabled": true
         }
     },
     "version": 2

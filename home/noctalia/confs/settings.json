@@ -151,6 +151,9 @@
                     "usePadding": false
                 },
                 {
+                    "id": "plugin:ip-monitor"
+                },
+                {
                     "compactMode": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -158,45 +161,24 @@
                     "maxWidth": 145,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
+                    "showAlbumArt": false,
+                    "showArtistFirst": false,
                     "showProgressRing": true,
                     "showVisualizer": false,
                     "textColor": "none",
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "linear"
-                },
-                {
-                    "id": "plugin:ip-monitor"
                 }
             ],
             "right": [
                 {
-                    "defaultSettings": {
-                        "colorHistory": [
-                        ],
-                        "detectedCompositor": "",
-                        "detectedRecorder": "",
-                        "filenameFormat": "",
-                        "installedLangs": [
-                            "eng"
-                        ],
-                        "paletteColors": [
-                        ],
-                        "screenshotPath": "",
-                        "selectedOcrLang": "eng",
-                        "transAvailable": false,
-                        "videoPath": ""
-                    },
-                    "id": "plugin:screen-toolkit"
+                    "displayMode": "forceOpen",
+                    "iconColor": "none",
+                    "id": "KeyboardLayout",
+                    "showIcon": false,
+                    "textColor": "none"
                 },
                 {
-                    "defaultSettings": {
-                        "connectedColor": "primary",
-                        "disableToastNotifications": false,
-                        "disconnectedColor": "none",
-                        "displayMode": "onhover"
-                    },
                     "id": "plugin:network-manager-vpn"
                 },
                 {
@@ -209,6 +191,9 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "id": "plugin:screen-toolkit"
                 },
                 {
                     "deviceNativePath": "__default__",
@@ -240,9 +225,6 @@
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
                     "unreadBadgeColor": "primary"
-                },
-                {
-                    "id": "plugin:wallcards"
                 }
             ]
         }
