@@ -23,7 +23,6 @@
 
     sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
-      GTK_THEME = "Adwaita:dark";
       EDITOR = "nvim";
     };
   };

@@ -4,5 +4,6 @@
     ./niri
     ./noctalia
     ./zsh
+    ./kitty.nix
   ];
 }
