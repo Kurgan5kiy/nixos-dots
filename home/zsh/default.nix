@@ -53,7 +53,12 @@
     chafa
   ];
 
-  # Writable Symlink to Repo for extra zsh configs like .p10k.zsh
-  xdg.configFile."zsh".source =
-    config.lib.file.mkOutOfStoreSymlink "/home/${vars.username}/nixos-dots/home/zsh/confs";
+  # Safer individual file links to prevent repo clobbering
+  xdg.configFile = let
+    confPath = "/home/${vars.username}/nixos-dots/home/zsh/confs";
+    mkLink = path: config.lib.file.mkOutOfStoreSymlink "${confPath}/${path}";
+  in {
+    "zsh/init.zsh".source = mkLink "init.zsh";
+    "zsh/.p10k.zsh".source = mkLink ".p10k.zsh";
+  };
 }
