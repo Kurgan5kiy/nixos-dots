@@ -131,12 +131,16 @@
     "yor"
   ],
   "transAvailable": true,
-  "selectedOcrLang": "eng",
+  "selectedOcrLang": "ukr",
   "screenshotPath": "",
   "videoPath": "",
   "filenameFormat": "",
   "detectedRecorder": "wl-screenrec",
   "detectedCompositor": "niri",
   "stateIsRunning": false,
-  "stateActiveTool": ""
+  "stateActiveTool": "",
+  "stateMirrorVisible": false,
+  "ocrResult": "",
+  "ocrCapturePath": "",
+  "translateResult": ""
 }
