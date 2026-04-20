@@ -14,6 +14,8 @@
         enable = true;
         configHome = "/home/${vars.username}/.config";
       };
+
+      gtk.gtk4.theme = null;
     };
   };
 }

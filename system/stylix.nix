@@ -12,15 +12,15 @@
 
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; };
+        package = pkgs.nerd-fonts.override { fonts = [ "CascadiaCode" ]; };
         name = "CaskaydiaCove Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; };
+        package = pkgs.nerd-fonts.override { fonts = [ "CascadiaCode" ]; };
         name = "CaskaydiaCove Nerd Font";
       };
       serif = {
-        package = pkgs.nerdfonts.override { fonts = [ "CascadiaCode" ]; };
+        package = pkgs.nerd-fonts.override { fonts = [ "CascadiaCode" ]; };
         name = "CaskaydiaCove Nerd Font";
       };
 
