@@ -32,6 +32,8 @@
       };
     };
 
+    opacity.terminal = 0.9;
+
     # Auto-enable styling for all supported targets
     autoEnable = true;
     
