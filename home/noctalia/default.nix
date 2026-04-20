@@ -3,6 +3,7 @@ let
   tesseractWrapped = import ../../wrapped/tesseract.nix { inherit pkgs lib; };
 
   extraPackages = with pkgs; [
+    imagemagick
     grim
     slurp
     wl-clipboard
