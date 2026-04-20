@@ -5,5 +5,6 @@
     ./noctalia
     ./zsh
     ./kitty.nix
+    ./spotify.nix
   ];
 }

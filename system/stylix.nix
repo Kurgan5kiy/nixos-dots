@@ -42,6 +42,7 @@
       console.enable = true;
       grub.enable = true;
       gnome.enable = true;
+      spicetify.enable = true;
     };
   };
 }

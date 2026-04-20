@@ -2,7 +2,6 @@
   environment = {
     systemPackages = with pkgs; [
       antigravity
-      spotify
       telegram-desktop
       neovim
       wget
