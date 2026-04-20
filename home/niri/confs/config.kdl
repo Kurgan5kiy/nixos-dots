@@ -93,6 +93,12 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id=r#"spotify"#
+    match app-id=r#"kitty"#
+    opacity 0.9
+}
+
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
