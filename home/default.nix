@@ -9,6 +9,11 @@
       home.username = vars.username;
       home.homeDirectory = "/home/${vars.username}";
       home.stateVersion = vars.stateVersion;
+
+      xdg = {
+        enable = true;
+        configHome = "/home/${vars.username}/.config";
+      };
     };
   };
 }
