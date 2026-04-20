@@ -39,7 +39,7 @@
     targets = {
       console.enable = true;
       grub.enable = true;
-      gdm.enable = true;
+      gnome.enable = true;
     };
   };
 }
