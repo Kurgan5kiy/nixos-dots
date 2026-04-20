@@ -1,6 +1,6 @@
 {
   programs = {
-    fish.enable = true;
+    zsh.enable = true;
     niri.enable = true;
     firefox.enable = true;
     dconf = {

@@ -3,5 +3,6 @@
     ./git.nix
     ./niri
     ./noctalia
+    ./zsh
   ];
 }
