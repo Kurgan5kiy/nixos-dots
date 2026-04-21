@@ -8,7 +8,7 @@
   # Global Theme Setting
   # You can switch the entire system theme here.
   # Stylix will apply this color scheme to all supported applications.
-  theme = "catppuccin-mocha";
+  theme = "gruvbox-dark-hard";
 
   # Popular Base16 Themes (for use in the 'theme' option above):
   # 1.  catppuccin-mocha     (Classic Dark)
