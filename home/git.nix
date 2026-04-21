@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       user = {
-        name = vars.git.name;
-        email = vars.git.email;
+        name = vars.git.user.name;
+        email = vars.git.user.email;
       };
       init.defaultBranch = vars.git.defaultBranch;
       core.editor = vars.git.editor;
