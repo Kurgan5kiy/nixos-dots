@@ -26,5 +26,10 @@
       GTK_THEME = "Adwaita:dark";
       EDITOR = "nvim";
     };
+    xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      config.common.default = "*";
+    };
   };
 }

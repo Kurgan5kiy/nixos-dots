@@ -3,10 +3,12 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name = vars.username;
-      user.email = vars.email;
-      init.defaultBranch = "master";
-      core.editor = "nvim";
+      user = {
+        name = vars.git.name;
+        email = vars.git.email;
+      };
+      init.defaultBranch = vars.git.defaultBranch;
+      core.editor = vars.git.editor;
     };
   };
 }
