@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, vars, ... }: {
   stylix = {
     enable = true;
     image = ../wallpapers/city-horizon.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${vars.theme}.yaml";
 
     cursor = {
       package = pkgs.bibata-cursors;
