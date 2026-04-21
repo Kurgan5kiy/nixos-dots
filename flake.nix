@@ -13,7 +13,7 @@
   outputs = { self, nixpkgs, ... }@inputs:
     let
       lib = nixpkgs.lib;
-      vars = import ./config.nix;
+      vars = import ./variables.nix;
     in {
     nixosConfigurations = {
       ${vars.hostname} = lib.nixosSystem {
