@@ -41,7 +41,7 @@
     targets = {
       console.enable = true;
       grub.enable = true;
-      gnome.enable = true;
+      gnome.enable = false;
       spicetify.enable = true;
       chromium.enable = true;
     };
