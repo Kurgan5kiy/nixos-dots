@@ -6,5 +6,6 @@
     ./zsh
     ./kitty.nix
     ./spotify.nix
+    ./chrome.nix
   ];
 }
