@@ -25,6 +25,7 @@
       LIBVA_DRIVER_NAME = "iHD";
       GTK_THEME = "Adwaita:dark";
       EDITOR = "nvim";
+      NIXOS_OZONE_WL = "1";
     };
   };
 }
