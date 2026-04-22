@@ -1,4 +1,7 @@
+{ vars, ... }:
 {
-  time.timeZone = "Europe/Warsaw";
-  time.hardwareClockInLocalTime = true;
+  time = {
+    inherit (vars) timeZone;
+    hardwareClockInLocalTime = true;
+  };
 }

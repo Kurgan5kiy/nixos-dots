@@ -10,7 +10,6 @@
       gh
       curl
       kitty
-      alacritty
       brightnessctl
       pavucontrol
       bluetui

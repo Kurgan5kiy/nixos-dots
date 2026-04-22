@@ -16,7 +16,7 @@
       vars = import ./variables.nix;
     in {
     nixosConfigurations = {
-      ${vars.hostname} = lib.nixosSystem {
+      ${vars.hostName} = lib.nixosSystem {
         inherit (vars) system;
         # Pass inputs and self to all modules
         specialArgs = { inherit self inputs vars; };

@@ -1,4 +1,6 @@
 { vars, ... }:
 {
-  system.stateVersion = vars.stateVersion;
+  system = {
+    inherit (vars) stateVersion;
+  };
 }
