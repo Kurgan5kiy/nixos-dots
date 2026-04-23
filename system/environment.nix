@@ -18,6 +18,7 @@
       sushi
       wl-clipboard
       noctalia-shell
+      comma
     ];
 
     sessionVariables = {
