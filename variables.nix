@@ -9,7 +9,7 @@ rec {
 
   git = {
     user = {
-      name = username;
+      name = username; #SETME
       email = "kurganskiyvladislav@gmail.com"; #SETME
     };
     init.defaultBranch = "master"; #SETME

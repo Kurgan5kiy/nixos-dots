@@ -18,7 +18,6 @@
     nixosConfigurations = {
       ${vars.hostName} = lib.nixosSystem {
         inherit (vars) system;
-        # Pass inputs and self to all modules
         specialArgs = { inherit self inputs vars; };
         modules = [
           ./system
