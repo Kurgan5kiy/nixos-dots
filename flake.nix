@@ -8,6 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +25,6 @@
       lib = nixpkgs.lib;
       vars = import ./variables.nix;
     in {
-    # System configuration (sudo nixos-rebuild switch --flake .)
     nixosConfigurations = {
       ${vars.hostName} = lib.nixosSystem {
         inherit (vars) system;
@@ -31,7 +36,6 @@
       };
     };
 
-    # Home configuration (home-manager switch --flake .)
     homeConfigurations = {
       ${vars.username} = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${vars.system};
@@ -39,6 +43,7 @@
         modules = [
           ./home
           inputs.stylix.homeModules.stylix
+          inputs.nix-index-database.homeModules.nix-index-database
         ];
       };
     };
