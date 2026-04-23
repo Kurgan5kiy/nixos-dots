@@ -3,19 +3,20 @@ let
   inherit (vars) username stateVersion;
 in
 {
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = { inherit inputs vars; };
-    users.${username} = {
-      imports = [
-        ./modules.nix
-      ];
-      home = {
-        inherit username stateVersion;
-        homeDirectory = "/home/${username}";
-      };
-      xdg.enable = true;
-    };
+  imports = [
+    ./modules.nix
+  ];
+
+  home = {
+    inherit username stateVersion;
+    homeDirectory = "/home/${username}";
   };
+
+  xdg.enable = true;
+
+  # Standalone HM needs nixpkgs config set here
+  nixpkgs.config.allowUnfree = true;
+
+  # Let HM manage itself (installs the `home-manager` CLI)
+  programs.home-manager.enable = true;
 }

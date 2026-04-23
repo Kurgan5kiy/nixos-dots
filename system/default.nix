@@ -12,5 +12,6 @@
     ./networking.nix
     ./time.nix
     ./system.nix
+    ./stylix.nix
   ];
 }
