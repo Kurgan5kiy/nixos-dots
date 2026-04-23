@@ -38,7 +38,7 @@
         extraSpecialArgs = { inherit inputs vars; };
         modules = [
           ./home
-          inputs.stylix.homeManagerModules.stylix
+          inputs.stylix.homeModules.stylix
         ];
       };
     };
