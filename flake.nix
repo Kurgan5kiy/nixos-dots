@@ -43,7 +43,7 @@
         modules = [
           ./home
           inputs.stylix.homeModules.stylix
-          inputs.nix-index-database.homeModules.nix-index-database
+          inputs.nix-index-database.homeModules.nix-index
         ];
       };
     };
