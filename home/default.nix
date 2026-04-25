@@ -1,25 +1,30 @@
-{ pkgs, inputs, vars, ... }:
+{ inputs, vars, theme, pkgs, ... }:
 let
   inherit (vars) username stateVersion;
 in
 {
-  imports = [
-    ./modules.nix
-  ];
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs vars theme; };
 
-  home = {
-    packages = with pkgs; [
-      nautilus
+    # Pass shared modules (like nix-index-database for comma)
+    sharedModules = [
+      inputs.nix-index-database.homeModules.nix-index
     ];
-    inherit username stateVersion;
-    homeDirectory = "/home/${username}";
+
+    users.${username} = {
+      imports = [
+        ./modules.nix
+      ];
+
+      home = {
+        packages = with pkgs; [ nautilus ];
+        inherit username stateVersion;
+        homeDirectory = "/home/${username}";
+      };
+
+      xdg.enable = true;
+    };
   };
-
-  xdg.enable = true;
-
-  # Standalone HM needs nixpkgs config set here
-  nixpkgs.config.allowUnfree = true;
-
-  # Let HM manage itself (installs the `home-manager` CLI)
-  programs.home-manager.enable = true;
 }

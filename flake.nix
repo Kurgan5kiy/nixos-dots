@@ -7,12 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,19 +29,9 @@
         specialArgs = { inherit self inputs vars theme; };
         modules = [
           ./system
+          ./home # Imports your new modular home setup
           inputs.stylix.nixosModules.stylix
-        ];
-      };
-    };
-
-    homeConfigurations = {
-      ${vars.username} = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${vars.system};
-        extraSpecialArgs = { inherit inputs vars theme; };
-        modules = [
-          ./home
-          inputs.stylix.homeModules.stylix
-          inputs.nix-index-database.homeModules.nix-index
+          inputs.home-manager.nixosModules.home-manager
         ];
       };
     };
