@@ -42,7 +42,7 @@
         extraSpecialArgs = { inherit inputs vars; };
         modules = [
           ./home
-          inputs.stylix.homeModules.stylix
+          # inputs.stylix.homeModules.stylix
           inputs.nix-index-database.homeModules.nix-index
         ];
       };
