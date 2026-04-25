@@ -5,7 +5,7 @@
     ./niri
     ./noctalia
     ./zsh
-    ./stylix.nix
+    # ./stylix.nix
     ./comma.nix
   ];
 }
