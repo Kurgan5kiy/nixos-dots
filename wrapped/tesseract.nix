@@ -3,18 +3,18 @@ let
   myTessdata = pkgs.runCommand "my-tessdata" { } ''
     mkdir -p $out/share
 
-    # 1. Link all necessary config files, but EXCLUDE the 120+ default languages
-    # We link them directly into $out/share
+    # link all necessary config files, but EXCLUDE the 120+ default languages
+    # link directly into $out/share
     for file in ${pkgs.tesseract}/share/tessdata/*; do
       if [[ $file != *.traineddata ]]; then
         ln -s "$file" $out/share/
       fi
     done
 
-    # 2. Explicitly link the mandatory Orientation and Script Detection file
+    # explicitly link the mandatory Orientation and Script Detection file
     ln -s ${pkgs.tesseract}/share/tessdata/osd.traineddata $out/share/
 
-    # 3. Link ONLY the specific languages
+    # link ONLY the specific languages
     ln -s ${pkgs.tesseract.languages.eng} $out/share/eng.traineddata
     ln -s ${pkgs.tesseract.languages.rus} $out/share/rus.traineddata
     ln -s ${pkgs.tesseract.languages.ukr} $out/share/ukr.traineddata

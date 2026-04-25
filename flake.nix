@@ -29,7 +29,7 @@
         specialArgs = { inherit self inputs vars theme; };
         modules = [
           ./system
-          ./home # Imports your new modular home setup
+          ./home # import modular home setup
           inputs.stylix.nixosModules.stylix
           inputs.home-manager.nixosModules.home-manager
         ];
