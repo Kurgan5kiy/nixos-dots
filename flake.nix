@@ -1,7 +1,6 @@
 {
   description = "Basic NixOS flake, nothing advanced";
 
-  # Inputs that flake accepts and uses
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
@@ -24,11 +23,12 @@
     let
       lib = nixpkgs.lib;
       vars = import ./variables.nix;
+      theme = import ./theme.nix;
     in {
     nixosConfigurations = {
       ${vars.hostName} = lib.nixosSystem {
         inherit (vars) system;
-        specialArgs = { inherit self inputs vars; };
+        specialArgs = { inherit self inputs vars theme; };
         modules = [
           ./system
           inputs.stylix.nixosModules.stylix
@@ -39,10 +39,10 @@
     homeConfigurations = {
       ${vars.username} = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${vars.system};
-        extraSpecialArgs = { inherit inputs vars; };
+        extraSpecialArgs = { inherit inputs vars theme; };
         modules = [
           ./home
-          # inputs.stylix.homeModules.stylix
+          inputs.stylix.homeModules.stylix
           inputs.nix-index-database.homeModules.nix-index
         ];
       };

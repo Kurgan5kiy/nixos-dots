@@ -1,4 +1,4 @@
-{ inputs, vars, ... }:
+{ pkgs, inputs, vars, ... }:
 let
   inherit (vars) username stateVersion;
 in
@@ -8,6 +8,9 @@ in
   ];
 
   home = {
+    packages = with pkgs; [
+      nautilus
+    ];
     inherit username stateVersion;
     homeDirectory = "/home/${username}";
   };
