@@ -8,7 +8,6 @@ in
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs vars theme; };
 
-    # pass shared modules (like nix-index-database for comma)
     sharedModules = [
       inputs.nix-index-database.homeModules.nix-index
     ];

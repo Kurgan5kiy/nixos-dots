@@ -1,7 +1,7 @@
  { config, pkgs, lib, vars, ... }:
 let
   colors = config.lib.stylix.colors.withHashtag;
-  tesseractWrapped = import ../../wrapped/tesseract.nix { inherit pkgs lib; };
+  tesseractWrapped = import ../wrapped/tesseract.nix { inherit pkgs lib; };
   
   extraPackages = with pkgs; [
     imagemagick
@@ -41,7 +41,7 @@ in
     };
   };
 
-  # Force Stylix to write directly to Noctalia's active color cache
+  # force Stylix to write directly to Noctalia's active color cache
   xdg.configFile."noctalia/colors.json" = {
     text = builtins.toJSON {
       mPrimary = colors.base0D;

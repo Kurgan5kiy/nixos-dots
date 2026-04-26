@@ -1,0 +1,52 @@
+{ pkgs, config, vars, ... }:
+{
+  programs = {
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+      icons = "auto";
+    };
+
+    zsh = {
+      enable = true;
+      dotDir = config.home.homeDirectory;
+
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+
+      plugins = [
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+        {
+          name = "fzf-tab";
+          src = pkgs.zsh-fzf-tab;
+          file = "share/fzf-tab/fzf-tab.plugin.zsh";
+        }
+      ];
+
+      initContent = ''
+        [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+        [[ -f ~/.config/zsh/init.zsh ]] && source ~/.config/zsh/init.zsh
+      '';
+    };
+
+  };
+
+  home.packages = with pkgs; [
+    zsh-completions
+    bat
+    chafa
+  ];
+}
