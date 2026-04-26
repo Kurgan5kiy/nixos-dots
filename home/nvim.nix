@@ -1,11 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, ... }: 
 {
   home.sessionVariables.EDITOR = "nvim";
 
-  home.packages = with pkgs;
-  [
+  home.packages = with pkgs; [
     inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
-
     nodejs
     python3
     python3Packages.pip
@@ -15,6 +13,12 @@
     ripgrep
     fd
     cargo
-    ascii-image-converter
+    ascii-image-converter 
   ];
+
+  xdg.desktopEntries."nvim" = {
+    name = "Neovim Legacy";
+    exec = "nvim %F";
+    noDisplay = true;
+  };
 }

@@ -5,17 +5,14 @@
       antigravity
       spotify
       telegram-desktop
-      # neovim
       wget
       git
       gh
       curl
-      # kitty
       brightnessctl
       pavucontrol
       bluetui
       zed-editor
-      # nautilus
       sushi
       wl-clipboard
       noctalia-shell
