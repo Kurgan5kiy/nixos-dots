@@ -5,7 +5,7 @@
       antigravity
       spotify
       telegram-desktop
-      neovim
+      # neovim
       wget
       git
       gh

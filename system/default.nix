@@ -1,7 +1,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./xdg-portal.nix
+#     ./xdg-portal.nix
     ./programs.nix
     ./services.nix
     ./hardware.nix

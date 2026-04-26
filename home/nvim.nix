@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home.sessionVariables.EDITOR = "nvim";
 
-  home.packages = with pkgs; [
-    neovim
+  home.packages = with pkgs;
+  [
+    inputs.neovim-nightly-overlay.packages.${pkgs.system}.default
+
     nodejs
     python3
     python3Packages.pip
@@ -13,5 +15,6 @@
     ripgrep
     fd
     cargo
+    ascii-image-converter
   ];
 }

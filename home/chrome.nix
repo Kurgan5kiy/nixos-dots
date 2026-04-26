@@ -2,9 +2,8 @@
 {
   programs.google-chrome = {
     enable = true;
-    
     commandLineArgs = [
-      "--enable-features=UseOzonePlatform"
+      "--enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
       "--ozone-platform=wayland"
     ];
   };
