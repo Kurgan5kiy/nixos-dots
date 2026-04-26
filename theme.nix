@@ -30,5 +30,5 @@ rec {
   # chalk
   # ------------------------------------
 
-  current = "gruvbox-dark-hard";
+  current = "gruvbox-light-hard";
 }
