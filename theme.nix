@@ -30,5 +30,5 @@ rec {
   # chalk
   # ------------------------------------
 
-  current = "gruvbox-light-hard";
+  current = "catppuccin-mocha";
 }

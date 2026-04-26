@@ -6,5 +6,6 @@
     ./zsh.nix
     ./programs.nix
     ./chrome.nix
+    ./nvim.nix
   ];
 }
