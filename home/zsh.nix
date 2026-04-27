@@ -15,6 +15,12 @@
       icons = "auto";
     };
 
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     zsh = {
       enable = true;
       dotDir = config.home.homeDirectory;
