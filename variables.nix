@@ -20,4 +20,8 @@ rec {
     layout = "pl,ru"; #SETME
     options = "grp:win_space_toggle"; #SETME
   };
+  obsidian = {
+    vaultName = "personal"; #SETME
+    vault = "/home/${username}/Documents/obsidian/${obsidian.vaultName}"; #SETME
+  };
 }
