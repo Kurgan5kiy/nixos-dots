@@ -18,7 +18,7 @@ rec {
 
   xkb = {
     layout = "pl,ru"; #SETME
-    options = "grp:win_space_toggle"; #SETME
+    options = "ctrl:swapcaps,grp:win_space_toggle"; #SETME
   };
   obsidian = {
     vaultName = "personal"; #SETME
