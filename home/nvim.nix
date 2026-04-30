@@ -14,6 +14,10 @@
     fd
     cargo
     ascii-image-converter 
+	nixd
+	nixfmt-rfc-style
+	statix
+	deadnix
   ];
 
   xdg.desktopEntries."nvim" = {
